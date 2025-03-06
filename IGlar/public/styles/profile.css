@@ -1,0 +1,499 @@
+:root{
+    --white: #f5f5f5;
+    --black: #000;
+    --grey: #262626;
+    --light-grey: #a8a8a8;
+    --blue: #0095f6;
+}
+body{
+    background-color: var(--black);
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif ;
+    color: var(--white);
+    overflow-x: hidden;
+    display: flex;
+    width: 100vw;
+    margin: 0px;
+}
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+a:hover{
+    opacity: 0.5;
+}
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    border-right: 1px solid var(--grey);
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    background-color: var(--black);
+    z-index: 1000;
+}
+.upper-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+.bottom-container{
+    padding: 1rem;
+}
+.logo{
+    width: 50%;
+    margin: 1rem ;
+}
+.logo2{
+    display: none;
+    color: var(--white);
+}
+.link{
+    display: flex;
+    align-items: center;
+    padding: 0.7rem;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+.link i{
+    margin-right: 10px;
+}
+.bottom-bar{
+    display: none;
+    background-color: var(--black);
+}
+.pfp{
+    border-radius: 100%;
+    border: 2px solid var(--white);
+}
+.M-container{
+    width: 75vw;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    margin-left: 300;
+}
+.upper-part-full{
+    margin-left: 630px;
+    margin-right: -100px;
+    margin-top: 40px;
+}
+.upper-part1{
+    display: flex;
+}
+.profil{
+    width: 170px;
+    height: 170px;
+}
+.profil img{
+    border-radius: 100%;
+    width: 170px;
+    height: 170px;
+}
+.profil img:hover{
+    cursor: pointer;
+}
+.border{
+    width: 172px;
+    height: 172px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    padding: 2px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.info1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    flex-direction: row;
+    gap: 1.3rem;
+    text-align: center;
+    height: 20px;
+}
+.info1 a{
+    margin-top: 26px;
+}
+.info1 svg{
+    margin-top: 23px;
+}
+.info1 svg:hover{
+    cursor: pointer;
+}
+.info2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    flex-direction: row;
+    gap: 1.9rem;
+    text-align: center;
+    height: 20px;
+}
+.k:hover{
+    cursor: pointer;
+}
+.info3{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    margin-left: 100px;
+    flex-direction: row;
+    gap: 1.3rem;
+    text-align: center;
+    font-size: 12px;
+    height: 20px;
+}
+.info4{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -35px;
+    margin-left: 100px;
+    flex-direction: row;
+    gap: 1.9rem;
+    text-align: center;
+    height: 20px;
+}
+.upper-part2{
+    margin-top: 60px;
+}
+.storky img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.stories{
+    display: flex;
+    justify-content: left;
+    overflow-x: auto;
+    width: 100%;
+    gap: 50px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.storky{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.storky p{
+    margin: 0.5rem 0rem;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.bottom-part{
+    margin-left: 570px;
+    margin-right: -200px;
+    border-top: 1px solid var(--grey);
+}
+.bottom-part-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.prisp{
+    margin-top: -10.5px;
+    border-top: 1px solid var(--white);
+    padding-top: 20px;
+    margin-right: 80px;
+}
+.uloz{
+    margin-right: 80px;
+}
+.sozn{
+    margin-right: 250px;
+}
+.bottom-part-txt:hover{
+    cursor: pointer;
+}
+.bottom-part-photos{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    position: relative;
+    margin-left: 500px;
+}
+.bottom-part-photos img{
+    width: 309px;
+    height: 309px;
+}
+.bottom-part-photos img:hover{
+    cursor: pointer;
+}
+.photo1{
+    display: block;
+    position: relative;
+    margin-right: 4px;
+}
+.photo2{
+    display: block;
+    position: relative;
+    margin-right: 4px;
+}
+.photo3{
+    display: block;
+    position: relative;
+}
+.bottom-part-grey{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 52px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 450px;
+}
+.bottom-part-greytext{
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.35rem;
+    font-size: 0.8rem;
+    padding-left: 2rem;
+    color: var(--light-grey);
+}
+.bottom-part-greytext2{
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    font-size: 0.8rem;
+    padding-left: 2rem;
+    color: var(--light-grey);
+}
+.upr{
+    background-color: rgba(255, 255, 255, 0.18);
+    margin-bottom: 5px;
+    border-radius: 10px;
+    height: 5px;
+    padding: 15px;
+}
+.hover{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 309px;
+    height: 309px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+.photo1:hover .hover{
+    display: block;
+}
+.hover img{
+    width: 40px;
+    height: 40px;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+.hover h2{
+    margin-left: 80px;
+    margin-top: -37px;
+}
+.hover1{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 309px;
+    height: 309px;
+    padding: 20px;
+}
+.photo1:hover .hover1{
+    display: block;
+}
+.hover1 img{
+    width: 40px;
+    height: 40px;
+    margin-top: 100px;
+    margin-left: 150px;
+}
+.hover1 h2{
+    margin-left: 190px;
+    margin-top: -37px;
+}
+.photo2:hover .hover1{
+    display: block;
+}
+.photo2:hover .hover{
+    display: block;
+}
+.photo3:hover .hover1{
+    display: block;
+}
+.photo3:hover .hover{
+    display: block;
+}
+
+
+
+/*hover*/
+.I:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.P:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.T:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.A:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.PP:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.S:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.PO:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.L:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.J:hover{
+    cursor: pointer;
+}
+.O:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.TH:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.NA:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  screen and (max-width: 900px) {
+    .sidebar{
+        width: 70px;
+    }
+
+    .upper-container{
+        align-items: center;
+    }
+    .bottom-container{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .link a{
+        display: none;
+    }
+    .link :hover{
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .logo2{
+        display: block;
+        width: 30px;
+        margin-left: -8px;
+        margin-bottom: 1rem;
+    }
+    .M-container{
+        width: 100vw;
+        margin: auto;
+        justify-content: center;
+    }
+
+}
+@media  screen and (max-width: 600px) {
+    .sidebar{
+        display: none;
+    }
+    .bottom-bar{
+        padding: 1rem;
+        width: 90%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--grey);
+        height: 20px;
+        margin: auto;
+    }
+    .bottom-bar :hover{
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
