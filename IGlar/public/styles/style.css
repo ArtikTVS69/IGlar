@@ -1,0 +1,448 @@
+:root{
+    --white: #f5f5f5;
+    --black: #000;
+    --grey: #262626;
+    --light-grey: #a8a8a8;
+    --blue: #0095f6;
+}
+body{
+    background-color: var(--black);
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif ;
+    color: var(--white);
+    overflow-x: hidden;
+    display: flex;
+    width: 100vw;
+    margin: 0px;
+}
+a{
+    color: var(--white);
+    text-decoration: none;
+}
+a:hover{
+    opacity: 0.5;
+}
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    border-right: 1px solid var(--grey);
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    background-color: var(--black);
+    z-index: 1000;
+}
+.upper-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+.bottom-container{
+    padding: 1rem;
+}
+.main-container{
+    width: 75vw;
+    display: block;
+    margin-left: 300px;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+.stories-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+.logo{
+    width: 50%;
+    margin: 1rem ;
+}
+.logo2{
+    display: none;
+}
+.logo,
+.logo2:hover{
+    cursor: pointer;   
+}
+.link{
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+.link i{
+    margin-right: 10px;
+}
+.bottom-bar{
+    display: none;
+    background-color: var(--black);
+}
+.stories{
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px ;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.story{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace
+}
+.story p {
+    margin: 0.5rem 0rem;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.border{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    padding: 2px;
+}
+.border img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--black);
+}
+.border:hover{
+    cursor: pointer;
+}
+.posts-comp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    padding: 1rem 0rem;
+}
+.post{
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+}
+.post-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.post-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+.post-info ul{
+    padding-left: 1rem;
+    color: var(--light-grey);
+}
+.post-info p{
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 0;
+}
+.profile-pic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+.border1{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    padding: 2px;
+}
+.list{
+    font-size: 0.7rem;
+    margin: 0;
+}
+.post-img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.post-icons{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+.post-icont-left{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5;
+    align-items: center;
+}
+
+.likes,
+.caption,
+.show,
+.hashtag,
+.comments,
+.comments2{
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+}
+.comments,
+.comments2{
+    color: var(--light-grey);
+}
+.post-icon:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.show:hover{
+    cursor: pointer;
+}
+.hashtag{
+    color: lightblue;
+    cursor: pointer;
+}
+.profile-sugg{
+    padding: 2rem;
+}
+.profile-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 365px;
+    margin: 0 auto;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.profile img{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    margin-right: 0.75rem;
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+.profile-info-name{
+    color: var(--light-grey);
+    margin: 0.2rem 0rem;
+}
+.switch{
+    color: var(--blue);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.switch:hover{
+    color: var(--white);
+    cursor: pointer;
+}
+.click{
+    cursor: pointer;
+}
+.profile-div{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin: 5;
+}
+.pic,.name:hover{
+    cursor: pointer;
+}
+.profile-list{
+    font-weight: 400;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 0.35rem;
+    font-size: 0.6rem;
+    padding-left: 0rem;
+    color: var(--light-grey);
+    margin-bottom: 0rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*UNDERLINE*/
+.I:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.P:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.T:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.A:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.PP:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.S:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.PO:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.L:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.J:hover{
+    cursor: pointer;
+}
+.O:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*UNDERLINE*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RESPONZIVITA*/
+@media  screen and (max-width: 1200px){
+    .profile-sugg{
+        display: none;
+    }
+}
+@media  screen and (max-width: 900px) {
+    .sidebar{
+        width: 70px;
+    }
+
+    .upper-container{
+        align-items: center;
+    }
+    .bottom-container{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .link a{
+        display: none;
+    }
+    .link :hover{
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .logo2{
+        display: block;
+        width: 30px;
+        margin-left: -8px;
+        margin-bottom: 1rem;
+    }
+    .main-container{
+        width: 100%;
+        margin: auto;
+        justify-content: right;
+    }
+    .stories-post{
+        width: calc(100%-70px);
+        justify-content: right;
+    }
+
+
+}
+@media  screen and (max-width: 600px) {
+    .sidebar{
+        display: none;
+    }
+    .bottom-bar{
+        padding: 1rem;
+        width: 90%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid var(--grey);
+        height: 20px;
+        margin: auto;
+    }
+    .bottom-bar :hover{
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
+/*RESPONZIVITA*/
