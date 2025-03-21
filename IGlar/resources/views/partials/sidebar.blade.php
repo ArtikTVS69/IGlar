@@ -11,23 +11,23 @@
             <a href="#">Hľadať</a>
           </div>
           <div class="link">
-            <img src="{{asset('images/explore.png')}}" style="height: 1rem; margin-right: 0.5rem"/>
+            <img src="{{asset('images/explore.png')}}" style="height: 18px; margin-right: 0.5rem"/>
             <a href="#">Preskúmať</a>
           </div>
           <div class="link">
-            <img src="{{asset('images/reels.png')}}" style="height: 1rem; margin-right: 0.5rem"/>
+            <img src="{{asset('images/reels.png')}}" style="height: 18px; margin-right: 0.5rem"/>
             <a href="#">Filmové pásy</a>
           </div>
           <div class="link">
-            <img src="{{asset('images/Spravy.png')}}" style="height: 1rem; margin-right: 0.5rem"/>
+            <img src="{{asset('images/Spravy.png')}}" style="height: 18px; margin-right: 0.5rem"/>
             <a href="#">Správy</a>
           </div>
           <div class="link">
-            <i data-feather="heart" style="width: 1rem ; margin-right: 0.5rem"></i>
+            <img src="{{asset('images/ntf.png')}}" style="height: 20px; margin-right: 0.3rem;"/>
             <a href="#">Upozornenia</a>
           </div>
           <div class="link">
-            <img src="{{asset('images/create.png')}}" style="height: 1rem; margin-right: 0.5rem"/>
+            <img src="{{asset('images/create.png')}}" style="height: 18px; margin-right: 0.5rem"/>
             <a href="#">Vytvoriť</a>
           </div> 
           <div class="link">

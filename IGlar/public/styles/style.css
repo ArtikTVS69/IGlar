@@ -43,21 +43,19 @@ a:hover{
     padding: 1rem;
 }
 .main-container{
-    width: 75vw;
-    display: block;
-    margin-left: 300px;
+    width: 100%;
     min-height: 100vh;
     height: auto;
     overflow-x: hidden;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 .stories-post{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    width: 100%;
     overflow: hidden;
 }
 .logo{
@@ -379,7 +377,7 @@ a:hover{
         display: none;
     }
 }
-@media  screen and (max-width: 900px) {
+@media  screen and (max-width: 1180px) {
     .sidebar{
         width: 70px;
     }
@@ -422,7 +420,7 @@ a:hover{
 
 
 }
-@media  screen and (max-width: 600px) {
+@media  screen and (max-width: 750px) {
     .sidebar{
         display: none;
     }
