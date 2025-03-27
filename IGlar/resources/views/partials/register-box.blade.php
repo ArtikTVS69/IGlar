@@ -5,10 +5,13 @@
         </div>
         
         <!-- LOGIN FORM -->
-        <form class="login-form" method="POST" action="/login">
+        <form class="register-form" method="POST" action="{{route('register')}}">
+            @csrf
             <input type="text" name="username" placeholder="Username" required>
+            <input type="text" name="email" placeholder="Email adress" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Log In</button>
+            <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
+            <button type="submit">Register</button>
         </form>
         
         <!-- OR DIVIDER -->
@@ -19,12 +22,8 @@
             <a href="#" class="facebook-login">Log in with Facebook</a>
         </div>
         
-        <!-- FORGOT PASSWORD -->
-        <div class="forgot-password">
-            <a href="#">Forgot password?</a>
-        </div>
     </div>
 
-    <div class="signup-container">
-        <p>Don't have an account? <a href="{{route('register')}}">Sign up</a></p>
+    <div class="login-container">
+        <p>Already have an account? <a href="{{route('login')}}">Log in</a></p>
     </div>
