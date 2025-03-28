@@ -4,15 +4,27 @@
             <img src="{{asset('/images/insta-logo.png')}}" alt="Instagram" style="width: 100px;">
         </div>
         
-        <!-- LOGIN FORM -->
-        <form class="register-form" method="POST" action="{{route('register')}}">
+        <form class="register-form" method="POST" action="{{ route('register') }}">
             @csrf
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="text" name="email" placeholder="Email adress" required>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email address" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
             <button type="submit">Register</button>
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
         </form>
+
         
         <!-- OR DIVIDER -->
         <div class="divider">OR</div>
