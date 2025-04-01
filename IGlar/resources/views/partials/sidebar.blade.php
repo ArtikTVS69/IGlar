@@ -38,8 +38,8 @@
 
     <div class="bottom-container">
         <div class="link">
-            <i class="fas fa-ellipsis-h"></i>
-            <a href="#">Viac</a>
+          <img src="{{asset('images/logoutIcon.png')}}" style="height: 1.2rem; margin-right: 0.5rem;"/>
+          <a href="{{route('login')}}" style="color:crimson">Log out</a>
           </div>  
     </div>
   </div>

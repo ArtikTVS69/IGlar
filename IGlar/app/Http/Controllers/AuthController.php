@@ -18,7 +18,7 @@ class AuthController extends Controller
 
     public function store() {
 
-         $validated = request()->validate([
+        $validated = request()->validate([
             'name' => 'required|min:3|max:40',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed|min:8'
@@ -34,33 +34,21 @@ class AuthController extends Controller
     }
 
     //login
-      public function login(){
+    public function login(){
         return view('Auth.login');
     }
 
-
-    public function authenticate() {
-
-
+    public function authenticate(Request $request){
+       
         $validated = request()->validate([
-            'email' => 'required|email',
-            'password' => 'required|confirmed|min:8'
+             'email' => 'required|email',
+             'password' => 'required|min:8'
         ]);
-
         
-        
-        if (Auth::attempt($validated)) { // Use Auth::attempt()
-            request()->session()->regenerate(); // Fixed regenerate method
-
-            dd(Auth::user()); // This will stop execution and show user info
-
-            
-            return redirect()->route('welcome')->with('success', 'Log in Successful!');
+        if(Auth::attempt($validated)){
+            return redirect()->route('welcome')->with('success', 'Login Successfull!');
         }
 
-        return redirect()->route('login')->withErrors([
-            'email' => 'Invalid email or password'
-        ]);
-
+        return redirect('/login')->withErrors('error', 'Invalid Credentials!');
     }
 }
