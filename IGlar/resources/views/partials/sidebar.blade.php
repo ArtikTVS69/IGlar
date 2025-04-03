@@ -30,10 +30,12 @@
             <img src="{{asset('images/create.png')}}" style="height: 18px; margin-right: 0.5rem"/>
             <a href="#">Vytvoriť</a>
           </div> 
-          <div class="link">
-            <img src="{{asset('images/Profilovka.png')}}" style="height: 1.2rem; margin-right: 0.5rem; margin-left: -0.23rem;"/>
-            <a href="{{ route('profile') }}">Profil</a>
-          </div>
+          @auth
+            <div class="link">
+              <img src="{{asset('images/Profilovka.png')}}" style="height: 1.2rem; margin-right: 0.5rem; margin-left: -0.23rem;"/>
+              <a href="/profile">{{Auth::user()->name}}</a>
+            </div>      
+          @endauth
     </div>    
 
     <div class="bottom-container">
