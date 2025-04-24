@@ -138,3 +138,70 @@ body.dark-mode .signup-container {
 body.dark-mode .signup-container a {
     color: #8ab4f8;
 }
+
+/* ADD POST CONTAINER */
+.add-post-container {
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .add-post-container {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: white;
+}
+
+/* FORM LABEL */
+.form-label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+}
+
+body.dark-mode .form-label {
+    color: #ddd;
+}
+
+/* INPUT & TEXTAREA */
+.add-post-form input[type="file"],
+.add-post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background: #fafafa;
+    margin-bottom: 15px;
+    transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+body.dark-mode .add-post-form input[type="file"],
+body.dark-mode .add-post-form textarea {
+    background: #333;
+    border: 1px solid #555;
+    color: white;
+}
+
+/* SUBMIT BUTTON */
+.add-post-form button {
+    width: 100%;
+    padding: 10px;
+    background: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-post-form button:hover {
+    background: #007acc;
+}

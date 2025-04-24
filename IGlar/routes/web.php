@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController; // Intelephense doesn't find this
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,4 +21,7 @@ Route::post('/register', [AuthController::class, 'store']);
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/login', [AuthController::class, 'authenticate']);
+
+Route::get('/add-post', [PostController::class, 'create'])->name('add.post');
+Route::post('/add-post', [PostController::class, 'store'])->name('store.post');
 
