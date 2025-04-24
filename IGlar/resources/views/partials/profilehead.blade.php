@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ma✖️in⭕ (@maxo_cv)• Fotky a videá na Instagrame</title>
+<title>{{Auth::user()->name}}• Fotky a videá na Instagrame</title>
 <link rel="stylesheet" href="{{asset('styles/profile.css')}}">
 <link
     data-default-icon="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30PrGfR3xhB.png"
