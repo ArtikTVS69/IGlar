@@ -20,3 +20,7 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 
 Route::post('/login', [AuthController::class, 'authenticate']);
 
+Route::get('/add-post', [PostController::class, 'create'])->name('add.post');
+
+Route::post('/add-post', [PostController::class, 'store'])->name('store.post');
+
