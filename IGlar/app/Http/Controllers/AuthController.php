@@ -51,4 +51,18 @@ class AuthController extends Controller
 
         return redirect('/login')->withErrors(['email' => 'Invalid Credentials!']);
     }
+    
+    /**
+     * Log the user out of the application.
+     */
+    public function logout()
+    {
+        Auth::logout();
+        
+        request()->session()->invalidate();
+        
+        request()->session()->regenerateToken();
+        
+        return redirect()->route('login')->with('success', 'Logged out successfully!');
+    }
 }

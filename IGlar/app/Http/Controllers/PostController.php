@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,8 +20,38 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('user')->latest()->get();
+        $posts = Post::with('user', 'likes')->latest()->get();
         return view('posts.index', compact('posts'));
+    }
+    
+    /**
+     * Display posts from users the authenticated user follows
+     */
+    public function feed()
+    {
+        // Get IDs of users the authenticated user follows
+        $followingIds = Auth::user()->following()->pluck('users.id');
+        
+        // Get posts from followed users and the authenticated user
+        $posts = Post::whereIn('user_id', $followingIds)
+                    ->orWhere('user_id', Auth::id())
+                    ->with('user', 'likes')
+                    ->latest()
+                    ->get();
+                    
+        return view('posts.index', compact('posts'));
+    }
+    
+    /**
+     * Display posts from a specific user
+     */
+    public function userPosts(\App\Models\User $user)
+    {
+        $posts = $user->posts()->with('user', 'likes')->latest()->get();
+        return view('posts.user_posts', [
+            'posts' => $posts,
+            'user' => $user
+        ]);
     }
 
     /**
