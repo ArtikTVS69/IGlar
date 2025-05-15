@@ -46,9 +46,9 @@ class AuthController extends Controller
         ]);
         
         if(Auth::attempt($validated)){
-            return redirect()->route('welcome')->with('success', 'Login Successfull!');
+            return redirect()->route('posts.index')->with('success', 'Login Successful!');
         }
 
-        return redirect('/login')->withErrors('error', 'Invalid Credentials!');
+        return redirect('/login')->withErrors(['email' => 'Invalid Credentials!']);
     }
 }

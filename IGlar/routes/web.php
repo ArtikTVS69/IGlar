@@ -28,6 +28,7 @@ Route::post('/login', [AuthController::class, 'authenticate']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/add-post', [PostController::class, 'create'])->name('add.post');
-
     Route::post('/add-post', [PostController::class, 'store'])->name('store.post');
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+    Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 });
