@@ -5,6 +5,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,7 +18,7 @@ Route::get('/', function () {
 
 // Use the ProfileController to show current user's profile
 Route::middleware('auth')->get('/profile', function(){
-    return redirect()->route('profile.show', ['user' => auth()->user()->id]);
+    return redirect()->route('profile.show', ['user' => Auth::id()]);
 })->name('profile');
 
 

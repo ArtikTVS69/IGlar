@@ -104,10 +104,9 @@
     .bottom-part-greytext2 {
         font-size: 12px;
     }
-    
-    .M-container {
-        padding-left: 250px;
-        align-items: flex-start;
+      .M-container {
+        /* Changed to center for consistent alignment across the app */
+        align-items: center;
     }
     
     .upper-part-full {

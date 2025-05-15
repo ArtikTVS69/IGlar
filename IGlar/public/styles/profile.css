@@ -22,7 +22,6 @@ a:hover{
     opacity: 0.5;
 }
 .sidebar{
-    position: fixed;
     width: 250px;
     height: 100vh;
     border-right: 1px solid var(--grey);
@@ -76,6 +75,7 @@ a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Ensure profile alignment is consistent with the rest of the app */
 }
 .upper-part-full{
     margin-right: -100px;
@@ -473,7 +473,7 @@ a:hover{
     .M-container{
         width: 100vw;
         margin: auto;
-        justify-content: center;
+        justify-content: center;    
     }
 
 }
