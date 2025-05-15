@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
-{
-    public function show(User $user)
+{    public function show(User $user)
     {
-        return view('profile.show', [
+        return view('profile', [
             'user' => $user,
             'posts' => $user->posts()->latest()->get(),
             'followersCount' => $user->followers()->count(),

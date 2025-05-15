@@ -15,8 +15,9 @@ Route::get('/', function () {
     return redirect()->route('login');
 })->name('welcome');
 
-Route::get('/profile', function(){
-    return view('profile');
+// Use the ProfileController to show current user's profile
+Route::middleware('auth')->get('/profile', function(){
+    return redirect()->route('profile.show', ['user' => auth()->user()->id]);
 })->name('profile');
 
 
