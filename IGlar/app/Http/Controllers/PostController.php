@@ -11,7 +11,7 @@ class PostController extends Controller
     public function __construct()
     {
         // Require authentication for all methods except index and show
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     /**
