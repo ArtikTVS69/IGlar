@@ -1,10 +1,10 @@
 <div class="sidebar">
     <div class="upper-container">
-      <a href="{{route('welcome')}}"><img src="{{asset('images/insta-written.png')}}" class="logo"></a>
-      <a href="{{route('welcome')}}"><img src="{{asset('images/insta-logo.png')}}" class="logo2"></a>
+      <a href="{{route('posts.index')}}"><img src="{{asset('images/insta-written.png')}}" class="logo"></a>
+      <a href="{{route('posts.index')}}"><img src="{{asset('images/insta-logo.png')}}" class="logo2"></a>
         <div class="link">
             <img src="{{asset('images/home.png')}}" style="height: 1rem; margin-right: 0.5rem;">
-            <a href="{{route('welcome')}}">Domov</a>
+            <a href="{{route('posts.index')}}">Domov</a>
         </div>
         <div class="link">
             <i class="fas fa-search"></i>
@@ -28,7 +28,7 @@
           </div>
           <div class="link">
             <img src="{{asset('images/create.png')}}" style="height: 18px; margin-right: 0.5rem"/>
-            <a href="#">Vytvoriť</a>
+            <a href="{{route('add.post')}}">Vytvoriť</a>
           </div> 
           @auth
             <div class="link">
