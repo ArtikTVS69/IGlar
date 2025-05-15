@@ -10,7 +10,7 @@ use App\Http\Controllers\PostController; // Intelephense doesn't find this
 })->name('welcome');*/
 Route::get('/', function () {
     return redirect()->route('login');
-})->name('home');
+})->name('welcome');
 
 Route::get('/profile', function(){
     return view('profile');
