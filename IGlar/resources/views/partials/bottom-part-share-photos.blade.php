@@ -2,7 +2,14 @@
     <div class="posts-grid">
         @forelse($posts as $post)
             <div class="post-item">
-                <a href="{{ route('posts.show', $post) }}">
+                <a href="{{ route('posts.show', $post) }}" 
+                   data-post-id="{{ $post->id }}"
+                   data-image-url="{{ asset('storage/' . $post->image_path) }}"
+                   data-caption="{{ $post->caption }}"
+                   data-username="{{ $post->user->name }}"
+                   data-likes="{{ $post->likesCount() }} likes"
+                   data-time="{{ $post->created_at->diffForHumans() }}"
+                   data-user-link="{{ route('profile.show', $post->user) }}">
                     <img src="{{ asset('storage/' . $post->image_path) }}" alt="{{ $post->caption }}">
                     <div class="post-overlay">
                         <div class="post-stats">

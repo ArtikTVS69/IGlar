@@ -11,8 +11,8 @@
         <div class="info1">
           <h2>{{ $user->name }}</h2>
           @if(Auth::check() && Auth::id() === $user->id)
-            <a class="upr" href="#" style="margin-top:18px; display:flex; align-items:center ">Edit profile</a>
-            <a class="upr" href="#" style="margin-top:18px; display:flex; align-items:center ">View archive</a>
+            <a class="upr" href="#">Edit profile</a>
+            <a class="upr" href="#">View archive</a>
           @else
             <div class="follow-button-container">
               @if(Auth::check() && Auth::user()->isFollowing($user))
@@ -36,10 +36,7 @@
           @if($user->bio)
             <div>{{ $user->bio }}</div>
           @else
-            <div>N❤️</div>
-            <div>📱</div>
-            <div>✏️</div>
-            <div>🔥</div>
+            <div>Welcome to my profile</div>
           @endif
         </div>
       </div>

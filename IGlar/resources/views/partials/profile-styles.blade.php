@@ -7,13 +7,16 @@
 
     /* Updated profile styling to match the screenshot */
     .info1 h2 {
-        margin-right: 20px;
+        margin: 0;
         font-weight: 400;
         font-size: 20px;
     }
 
     .info1 {
         align-items: center;
+    }
+    .info1 a{
+        margin: 0;
     }
     
     .info1 .upr {
@@ -27,28 +30,26 @@
         border-radius: 8px;
         font-size: 14px;
         font-weight: 600;
-    }
-
-    .info2 {
-        margin-top: -20px !important;
+    }    .info2 {
         font-size: 16px;
         display: flex;
+        margin-bottom: 30px;
     }
     
     .info2 p {
         margin-right: 40px;
-    }
-
-    .info3 {
-        margin-top: -10px !important;
+    }    .info3 {
+        margin-top: 5px !important;
         font-weight: 600;
-    }
-
-    .info4 {
+        margin-bottom: 15px;
+        margin-left: 100px;
+    }.info4 {
         margin-top: -25px !important;
-        display: flex;
-        align-items: center;
-        gap: 8px;
+        font-size: 14px;
+        color: #f5f5f5;
+        display: block; /* Changed from flex to block */
+        margin-left: 100px;
+        width: 100%;
     }
     
     .profil img {
@@ -125,11 +126,16 @@
         .info2 {
             flex-direction: column;
             align-items: center;
+            margin-left: 0;
         }
         
         .info2 p {
             margin-right: 0;
-            margin-bottom: 5px;
+         }
+        
+        .info3, .info4 {
+            margin-left: 0;
+            text-align: center;
         }
         
         .upper-part1 {
