@@ -61,18 +61,26 @@
         </div>
         
         <div class="comments-section">
-            <!-- Comments would go here -->
-            <div class="no-comments">
-                <p>No comments yet. Be the first to comment.</p>
-            </div>
+            @if($post->comments->count() > 0)
+                @foreach($post->comments as $comment)
+                <div class="comment">
+                    <a href="{{ route('profile.show', $comment->user) }}" class="comment-username">{{ $comment->user->name }}</a>
+                    <span class="comment-text">{{ $comment->comment }}</span>
+                    <div class="comment-time">{{ $comment->created_at->diffForHumans() }}</div>
+                </div>
+                @endforeach
+            @else
+                <div class="no-comments">
+                    <p>No comments yet. Be the first to comment.</p>
+                </div>
+            @endif
         </div>
         <div class="post-time">
             {{ $post->created_at->format('F j, Y') }}
         </div>
         
-        <form class="comment-form" action="#" method="POST">
+        <form class="comment-form" action="{{ route('comments.store', $post) }}" method="POST">
             @csrf
-            <input type="hidden" name="post_id" value="{{ $post->id }}">
             <svg aria-label="Emoji" color="rgb(168, 168, 168)" fill="rgb(168, 168, 168)" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z"></path></svg>
             <input type="text" name="comment" placeholder="Add a comment..." required>
             <button type="submit">Post</button>
@@ -192,6 +200,32 @@
         padding: 20px 0;
         color: #8e8e8e;
         text-align: center;
+    }
+    
+    .comment {
+        padding: 8px 0;
+        border-bottom: 1px solid #262626;
+    }
+    
+    .comment:last-child {
+        border-bottom: none;
+    }
+    
+    .comment-username {
+        font-weight: 600;
+        color: #f5f5f5;
+        text-decoration: none;
+        margin-right: 5px;
+    }
+    
+    .comment-text {
+        color: #f5f5f5;
+    }
+    
+    .comment-time {
+        font-size: 12px;
+        color: #8e8e8e;
+        margin-top: 4px;
     }
     
     .post-time {

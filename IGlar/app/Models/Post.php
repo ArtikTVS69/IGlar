@@ -38,4 +38,9 @@ class Post extends Model
     {
         return $this->likes()->count();
     }
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
+    }
 }

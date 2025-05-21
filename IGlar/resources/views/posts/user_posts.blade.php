@@ -93,11 +93,17 @@
                         </div>
                         <div class="comments-link">
                             <a href="{{ route('posts.show', $post) }}">View all comments</a>
-                        </div>
-                        <div class="post-time">
+                        </div>                        <div class="post-time">
                             {{ $post->created_at->diffForHumans() }}
                         </div>
                     </div>
+                    
+                    <form class="comment-form" action="{{ route('comments.store', $post) }}" method="POST">
+                        @csrf
+                        <svg aria-label="Emoji" color="rgb(168, 168, 168)" fill="rgb(168, 168, 168)" height="13" role="img" viewBox="0 0 24 24" width="13"><path d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z"></path></svg>
+                        <input type="text" name="comment" placeholder="Add a comment..." required>
+                        <button type="submit">Post</button>
+                    </form>
                 </div>
             @endforeach
         </div>
@@ -180,9 +186,34 @@
     .follow-btn:hover {
         background-color: #1877f2;
     }
-    
-    .unfollow-btn:hover {
+      .unfollow-btn:hover {
         background-color: #363636;
+    }
+    
+    .comment-form {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        border-top: 1px solid #262626;
+    }
+    
+    .comment-form input {
+        flex: 1;
+        border: none;
+        outline: none;
+        padding: 0 10px;
+        font-size: 14px;
+        background-color: transparent;
+        color: #f5f5f5;
+    }
+    
+    .comment-form button {
+        background: none;
+        border: none;
+        color: #0095f6;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
     }
 </style>
 @endsection

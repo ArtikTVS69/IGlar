@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
@@ -49,4 +50,7 @@ Route::middleware('auth')->group(function () {
     // Follow routes
     Route::post('/user/{user}/follow', [FollowController::class, 'follow'])->name('user.follow');
     Route::delete('/user/{user}/unfollow', [FollowController::class, 'unfollow'])->name('user.unfollow');
+    
+    // Comment routes
+    Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
 });
