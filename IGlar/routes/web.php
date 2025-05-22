@@ -6,6 +6,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,10 @@ Route::middleware('auth')->group(function () {
     
     // Follow routes
     Route::post('/user/{user}/follow', [FollowController::class, 'follow'])->name('user.follow');
+    
+    // Search routes
+    Route::get('/search', [SearchController::class, 'index'])->name('search.index');
+    Route::get('/search/results', [SearchController::class, 'search'])->name('search');
     Route::delete('/user/{user}/unfollow', [FollowController::class, 'unfollow'])->name('user.unfollow');
     
     // Comment routes

@@ -8,7 +8,7 @@
         </div>
         <div class="link">
             <i class="fas fa-search"></i>
-            <a href="#">Hľadať</a>
+            <a href="{{ route('search.index') }}">Search</a>
           </div>
           <div class="link">
             <img src="{{asset('images/explore.png')}}" style="height: 18px; margin-right: 0.5rem"/>
