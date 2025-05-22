@@ -1,3 +1,6 @@
+<!-- Emoji Picker CSS -->
+<link rel="stylesheet" href="{{ asset('styles/emoji-picker.css') }}">
+
 <div class="bottom-bar">
     <a href="{{route('posts.index')}}">
         <svg aria-label="Home" color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)" height="24" role="img" viewBox="0 0 24 24" width="24">
@@ -30,3 +33,6 @@
         <img src="{{asset('images/DefaultProfPic.png')}}" alt="Profile" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover;">
     </a>
 </div>
+
+<!-- Emoji Picker JavaScript -->
+<script src="{{ asset('js/emoji-picker.js') }}"></script>
