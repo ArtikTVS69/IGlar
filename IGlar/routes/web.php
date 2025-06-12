@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/feed', [PostController::class, 'feed'])->name('posts.feed');
     Route::get('/user/{user}/posts', [PostController::class, 'userPosts'])->name('user.posts');
     Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
     
     // Like routes
     Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');

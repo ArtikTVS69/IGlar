@@ -32,7 +32,11 @@
           </div> 
           @auth
             <div class="link">
-              <img src="{{asset('images/DefaultProfPic.png')}}" style="height: 1.2rem; margin-right: 0.5rem; margin-left: -0.23rem;"/>
+              @if(Auth::user()->profile_picture)
+                <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" style="height: 1.2rem; width: 1.2rem; border-radius: 50%; margin-right: 0.5rem; margin-left: -0.23rem; object-fit: cover;"/>
+              @else
+                <img src="{{asset('images/DefaultProfPic.png')}}" style="height: 1.2rem; margin-right: 0.5rem; margin-left: -0.23rem;"/>
+              @endif
               <a href="{{ route('profile.show', Auth::user()) }}">{{Auth::user()->name}}</a>
             </div>      
           @endauth

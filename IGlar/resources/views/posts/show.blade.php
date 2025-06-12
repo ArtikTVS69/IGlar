@@ -6,7 +6,11 @@
         <div class="post-header">
             <div class="user-info">
                 <div class="avatar-container">
-                    <img src="{{ asset('images/DefaultProfPic.png') }}" alt="Profile" class="profile-pic">
+                    @if($post->user->profile_picture)
+                        <img src="{{ asset('storage/' . $post->user->profile_picture) }}" alt="Profile" class="profile-pic">
+                    @else
+                        <img src="{{ asset('images/DefaultProfPic.png') }}" alt="Profile" class="profile-pic">
+                    @endif
                 </div>
                 <div class="user-details">
                     <a href="{{ route('profile.show', $post->user) }}" class="username">{{ $post->user->name }}</a>

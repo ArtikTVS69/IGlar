@@ -3,7 +3,11 @@
       <div class="profilpfp">
         <div class="border">
           <div class="profil">
-            <img src="{{asset('images/DefaultProfPic.png')}}" alt="{{ $user->name }}" >
+            @if($user->profile_picture)
+              <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="{{ $user->name }}">
+            @else
+              <img src="{{asset('images/DefaultProfPic.png')}}" alt="{{ $user->name }}">
+            @endif
           </div>
         </div>
       </div>
@@ -11,7 +15,7 @@
         <div class="info1">
           <h2>{{ $user->name }}</h2>
           @if(Auth::check() && Auth::id() === $user->id)
-            <a class="upr" href="#">Edit profile</a>
+            <a class="upr" href="{{ route('profile.edit', $user) }}">Edit profile</a>
             <a class="upr" href="#">View archive</a>
           @else
             <div class="follow-button-container">

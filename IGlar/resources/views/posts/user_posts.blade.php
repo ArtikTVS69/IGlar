@@ -1,9 +1,12 @@
 @extends('layout.layout')
 
 @section('content')
-<div class="user-profile-header">
-    <div class="user-avatar">
-        <img src="{{ asset('images/DefaultProfPic.png') }}" alt="{{ $user->name }}" class="profile-pic-large">
+<div class="user-profile-header">    <div class="user-avatar">
+        @if($user->profile_picture)
+            <img src="{{ asset('storage/' . $user->profile_picture) }}" alt="{{ $user->name }}" class="profile-pic-large">
+        @else
+            <img src="{{ asset('images/DefaultProfPic.png') }}" alt="{{ $user->name }}" class="profile-pic-large">
+        @endif
     </div>
     <div class="user-info">
         <h1>{{ $user->name }}</h1>
@@ -36,10 +39,13 @@
         <div class="posts">
             @foreach($posts as $post)
                 <div class="post-card">
-                    <div class="post-header">
-                        <div class="user-info">
+                    <div class="post-header">                        <div class="user-info">
                             <div class="avatar-container">
-                                <img src="{{ asset('images/DefaultProfPic.png') }}" alt="Profile" class="profile-pic">
+                                @if($post->user->profile_picture)
+                                    <img src="{{ asset('storage/' . $post->user->profile_picture) }}" alt="Profile" class="profile-pic">
+                                @else
+                                    <img src="{{ asset('images/DefaultProfPic.png') }}" alt="Profile" class="profile-pic">
+                                @endif
                             </div>
                             <div class="user-details">
                                 <a href="{{ route('profile.show', $post->user) }}" class="username">{{ $post->user->name }}</a>
