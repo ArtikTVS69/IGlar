@@ -127,9 +127,7 @@ a:hover{
     text-align: center;
 }
 
-.info1 svg{
-    margin-top: 23px;
-}
+
 .info1 svg:hover{
     cursor: pointer;
 }
@@ -193,7 +191,6 @@ a:hover{
     text-align: center;
 }
 .bottom-part{
-    margin-right: -200px;
     border-top: 1px solid var(--grey);
 }
 .bottom-part-txt{

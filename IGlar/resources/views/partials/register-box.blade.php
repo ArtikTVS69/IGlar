@@ -21,11 +21,8 @@
                 </ul>
             </div>
         @endif
-
-
         </form>
 
-        
         <!-- OR DIVIDER -->
         <div class="divider">OR</div>
         
@@ -36,6 +33,7 @@
         
     </div>
 
+    <br>
     <div class="login-container">
         <p>Already have an account? <a href="{{route('login')}}">Log in</a></p>
     </div>

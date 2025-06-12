@@ -60,10 +60,6 @@
         margin-right: 80px;
     }
 
-    .bottom-part-txt {
-        margin-left: -50px;
-    }
-    
     .bottom-part {
         margin-top: 20px;
         width: 100%;
