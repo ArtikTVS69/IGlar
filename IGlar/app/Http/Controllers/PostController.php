@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -90,5 +91,26 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', compact('post'));
+    }
+
+    /**
+     * Delete the specified post
+     */
+    public function destroy(Post $post)
+    {
+        // Check if the authenticated user owns the post
+        if (Auth::id() !== $post->user_id) {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
+        // Delete the image file from storage
+        if ($post->image_path && \Storage::disk('public')->exists($post->image_path)) {
+            \Storage::disk('public')->delete($post->image_path);
+        }
+
+        // Delete the post (this will also delete related comments and likes due to cascade)
+        $post->delete();
+
+        return response()->json(['success' => 'Post deleted successfully']);
     }
 }

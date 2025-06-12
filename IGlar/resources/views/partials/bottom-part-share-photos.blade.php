@@ -1,7 +1,6 @@
 <div class="posts-container">
     <div class="posts-grid">
-        @forelse($posts as $post)
-            <div class="post-item">
+        @forelse($posts as $post)            <div class="post-item">
                 <a href="{{ route('posts.show', $post) }}" 
                    data-post-id="{{ $post->id }}"
                    data-image-url="{{ asset('storage/' . $post->image_path) }}"
@@ -14,8 +13,22 @@
                     <div class="post-overlay">
                         <div class="post-stats">
                             <span><i class="fas fa-heart"></i> {{ $post->likesCount() }}</span>
-                            <span><i class="fas fa-comment"></i> 0</span>
+                            <span><i class="fas fa-comment"></i> {{ $post->comments->count() }}</span>
                         </div>
+                        @if(Auth::check() && Auth::id() === $post->user_id)
+                            <div class="post-options-grid">
+                                <button class="post-options-btn grid-options" 
+                                        data-post-id="{{ $post->id }}" 
+                                        data-is-owner="true"
+                                        onclick="event.preventDefault(); event.stopPropagation();">
+                                    <svg aria-label="More options" color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)" height="20" role="img" viewBox="0 0 24 24" width="20">
+                                        <circle cx="12" cy="12" r="1.5"></circle>
+                                        <circle cx="6" cy="12" r="1.5"></circle>
+                                        <circle cx="18" cy="12" r="1.5"></circle>
+                                    </svg>
+                                </button>
+                            </div>
+                        @endif
                     </div>
                 </a>
             </div>

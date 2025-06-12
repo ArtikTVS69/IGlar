@@ -54,9 +54,16 @@
                             </div>                            <div class="user-details">
                                 <a href="{{ route('profile.show', $post->user) }}" class="username">{{ $post->user->name }}</a>
                             </div>
-                        </div>
-                        <div class="post-options">
-                            <svg aria-label="More options" color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+                        </div>                        <div class="post-options">
+                            <button class="post-options-btn" 
+                                    data-post-id="{{ $post->id }}" 
+                                    data-is-owner="{{ Auth::check() && Auth::id() === $post->user_id ? 'true' : 'false' }}">
+                                <svg aria-label="More options" color="rgb(245, 245, 245)" fill="rgb(245, 245, 245)" height="24" role="img" viewBox="0 0 24 24" width="24">
+                                    <circle cx="12" cy="12" r="1.5"></circle>
+                                    <circle cx="6" cy="12" r="1.5"></circle>
+                                    <circle cx="18" cy="12" r="1.5"></circle>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     

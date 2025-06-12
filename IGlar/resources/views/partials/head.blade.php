@@ -3,6 +3,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Instagram</title>
 <link rel="stylesheet" href="{{asset('styles/style.css')}}">
+<link rel="stylesheet" href="{{asset('styles/post-options.css')}}">
 <link
     data-default-icon="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30PrGfR3xhB.png"
     rel="icon"

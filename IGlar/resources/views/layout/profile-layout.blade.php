@@ -51,9 +51,13 @@
           <link rel="stylesheet" href="{{ asset('styles/follow.css') }}">
           <!-- Include post modal styles -->
           <link rel="stylesheet" href="{{ asset('styles/post-modal.css') }}">
+          <!-- Include post options styles -->
+          <link rel="stylesheet" href="{{ asset('styles/post-options.css') }}">
           <!-- Include follow.js for profile interactions -->
           <script src="{{ asset('js/follow.js') }}"></script>
           <!-- Include post-modal.js for post modal interactions -->
           <script src="{{ asset('js/post-modal.js') }}"></script>
+          <!-- Include post-options.js for post options functionality -->
+          <script src="{{ asset('js/post-options.js') }}"></script>
       </body>
       </html>

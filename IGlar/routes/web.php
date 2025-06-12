@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/add-post', [PostController::class, 'store'])->name('store.post');
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
     Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
     Route::get('/feed', [PostController::class, 'feed'])->name('posts.feed');
     Route::get('/user/{user}/posts', [PostController::class, 'userPosts'])->name('user.posts');
     Route::get('/profile/{user}', [ProfileController::class, 'show'])->name('profile.show');
